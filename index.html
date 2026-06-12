@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Giridhar Kannan — Data Scientist & ML Engineer. Dataset curation, model evaluation, signal processing. Edinburgh, UK.">
+<title>Giridhar Kannan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="noise"></div>
+<div id="scanline"></div>
+
+<!-- Intro -->
+<div id="intro">
+  <div class="intro-mark">Giridhar Kannan</div>
+  <div class="intro-line"></div>
+  <div class="intro-sub">signal in the noise</div>
+  <div class="intro-progress"><div class="intro-bar"></div></div>
+</div>
+
+<!-- Cursor -->
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- Ripple canvas -->
+<canvas id="rcanvas"></canvas>
+
+<!-- Easter egg overlay -->
+<div id="egg-overlay">
+  <div class="egg-box">
+    <div class="egg-label">// you went looking</div>
+    <div class="egg-text">"The most dangerous thing you can do with a dataset is trust it. The second most dangerous thing is not trust it. The skill is knowing which one you're doing."</div>
+    <button class="egg-close" id="egg-close-btn">[ dismiss ]</button>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-id">GK · 2025</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#datasets">Datasets</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════ HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow rv">Data Scientist · ML Engineer · Edinburgh, UK</span>
+    <h1 class="hero-name rv d1">
+      <span class="glitch" data-text="Giridhar">Giridhar</span><br>
+      <span class="italic">Kannan</span>
+    </h1>
+    <p class="hero-sub rv d2">
+      I find signal in noise — from gravitational wave strain to esports pressure metrics. I build things that probably shouldn't exist, and make datasets that always should.
+    </p>
+    <div class="hero-stats rv d3">
+      <div class="hstat">
+        <div class="hstat-n" data-target="35">0%</div>
+        <div class="hstat-l">AI retention<br>uplift</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n" data-target="40">0%</div>
+        <div class="hstat-l">API latency<br>reduction</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n" data-target="97">0%</div>
+        <div class="hstat-l">Peak ANN<br>accuracy</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right rv d2">
+    <div class="terminal-box">
+      <div class="terminal-bar">
+        <div class="tb-dot"></div><div class="tb-dot"></div><div class="tb-dot"></div>
+        <div class="tb-title">gk@local ~ bash</div>
+      </div>
+      <div class="terminal-content" id="terminal"></div>
+    </div>
+  </div>
+
+  <div class="scroll-pill">
+    <span class="scroll-pill-line"></span>
+    Scroll
+  </div>
+</section>
+
+<div class="section-rule"><span>§ about</span></div>
+
+<!-- ═══════════════════════════ ABOUT -->
+<section id="about">
+  <div>
+    <h2 class="sec-title rv">Who I <em>am</em></h2>
+    <div class="about-body rv d1">
+      <p>
+        I'm finishing an MSc in Data Science at Heriot-Watt University, Edinburgh — with a background in software engineering and a compulsion to build things driven entirely by curiosity: chess engines, tournament simulators, gravitational wave analysis pipelines.
+      </p>
+      <p>
+        What sets me apart is that I gravitate toward the work most people skip: the <strong>cleaning</strong>, the <strong>curation</strong>, the unglamorous craft of making a dataset trustworthy before a single model ever sees it. I also create and collate datasets entirely in my own time — not as preparation for something else, but because I find the craft of it genuinely absorbing.
+      </p>
+      <p>
+        The course <strong>Biologically Inspired Computation</strong> changed how I see data entirely — watching evolution, swarms, and neural architectures operate as nature's own optimisation strategies. That lens follows me into everything I build.
+      </p>
+    </div>
+  </div>
+
+  <div class="skills-constellation rv d2" id="constellation">
+    <canvas id="skill-canvas"></canvas>
+    <div class="skills-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:rgba(234,228,217,.65)"></div><span style="color:var(--paper)">core</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--ember)"></div><span style="color:var(--paper)">evals/data</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--celadon)"></div><span style="color:var(--paper)">infra</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Post-rock interlude -->
+<div class="postrock-break rv">
+  <p class="pr-text">
+    Every project starts in <strong>silence</strong>, builds slowly, and breaks into something larger than what was planned.
+  </p>
+</div>
+
+<div class="section-rule" style="margin-top:0"><span>§ projects</span></div>
+
+<!-- ═══════════════════════════ PROJECTS -->
+<section id="projects">
+  <div class="proj-header">
+    <h2 class="sec-title rv">Work I <em>love</em><br>doing</h2>
+    <div class="proj-count rv">07</div>
+  </div>
+
+  <!-- ── 01: esports Tournament Simulator ── -->
+  <div class="pcard c-esports rv" id="p-esports">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag">01 · esports · Predictive Modelling · Personal</span>
+        <h3 class="ptitle">Tournament<br>Result Simulator</h3>
+        <p class="pdesc">A full simulation engine built from obsession. Predicts esports tournament outcomes using player ELO ratings, current form windows (rolling 5-game), round-robin trajectory modelling, and a hand-engineered <em>pressure factor</em> derived from 3 years of historical clutch-performance data. Every variable sourced, cleaned, and structured personally — this dataset does not exist anywhere else.</p>
+      </div>
+      <div>
+        <div class="pmeta">
+          <div class="pmet"><div class="pmet-n">Pressure<br>Factor</div><div class="pmet-l">Novel feature</div></div>
+          <div class="pmet"><div class="pmet-n">Round-<br>Robin</div><div class="pmet-l">Prediction arch</div></div>
+          <div class="pmet"><div class="pmet-n">ELO+</div><div class="pmet-l">Custom rating</div></div>
+        </div>
+        <div class="ptech"><span>Python</span><span>NumPy</span><span>Pandas</span><span>Scikit-learn</span><span>Custom Dataset</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis">
+      <svg viewBox="0 0 320 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
+        <!-- R1 boxes -->
+        <rect x="14" y="24" width="68" height="20" fill="rgba(201,79,46,.055)" stroke="rgba(201,79,46,.24)" stroke-width=".7"/>
+        <rect x="14" y="54" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="14" y="100" width="68" height="20" fill="rgba(201,79,46,.18)" stroke="rgba(201,79,46,.6)" stroke-width=".9"/>
+        <rect x="14" y="130" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="14" y="176" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="14" y="206" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="14" y="252" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="14" y="282" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <!-- R1 to R2 connectors -->
+        <line x1="82" y1="34" x2="104" y2="34" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="82" y1="64" x2="104" y2="64" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="34" x2="104" y2="64" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="49" x2="122" y2="49" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="82" y1="110" x2="104" y2="110" stroke="rgba(201,79,46,.55)" stroke-width="1"/>
+        <line x1="82" y1="140" x2="104" y2="140" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="110" x2="104" y2="140" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="125" x2="122" y2="125" stroke="rgba(201,79,46,.38)" stroke-width=".8"/>
+        <line x1="82" y1="186" x2="104" y2="186" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="82" y1="216" x2="104" y2="216" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="186" x2="104" y2="216" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="201" x2="122" y2="201" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="82" y1="262" x2="104" y2="262" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="82" y1="292" x2="104" y2="292" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="262" x2="104" y2="292" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="104" y1="277" x2="122" y2="277" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <!-- R2 boxes -->
+        <rect x="122" y="39" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="122" y="115" width="68" height="20" fill="rgba(201,79,46,.12)" stroke="rgba(201,79,46,.5)" stroke-width=".8"/>
+        <rect x="122" y="191" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <rect x="122" y="267" width="68" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <!-- R2 to SF -->
+        <line x1="190" y1="49" x2="210" y2="49" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <line x1="190" y1="125" x2="210" y2="125" stroke="rgba(201,79,46,.5)" stroke-width=".9"/>
+        <line x1="210" y1="49" x2="210" y2="125" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <line x1="210" y1="87" x2="228" y2="87" stroke="rgba(201,79,46,.28)" stroke-width=".7"/>
+        <line x1="190" y1="201" x2="210" y2="201" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <line x1="190" y1="277" x2="210" y2="277" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <line x1="210" y1="201" x2="210" y2="277" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <line x1="210" y1="239" x2="228" y2="239" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <!-- SF boxes -->
+        <rect x="228" y="77" width="60" height="20" fill="rgba(201,79,46,.08)" stroke="rgba(201,79,46,.4)" stroke-width=".8"/>
+        <rect x="228" y="229" width="60" height="20" fill="rgba(201,79,46,.04)" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <!-- SF to Final -->
+        <line x1="288" y1="87" x2="302" y2="87" stroke="rgba(201,79,46,.4)" stroke-width=".8"/>
+        <line x1="288" y1="239" x2="302" y2="239" stroke="rgba(201,79,46,.15)" stroke-width=".6"/>
+        <line x1="302" y1="87" x2="302" y2="239" stroke="rgba(201,79,46,.2)" stroke-width=".6"/>
+        <line x1="302" y1="163" x2="314" y2="163" stroke="rgba(201,79,46,.35)" stroke-width=".8"/>
+        <!-- Final -->
+        <rect x="314" y="153" width="4" height="20" fill="rgba(201,79,46,.5)" rx="1"/>
+        <!-- Labels -->
+        <text x="18" y="38" fill="rgba(201,79,46,.4)" font-size="7" font-family="monospace">TM-A</text>
+        <text x="18" y="68" fill="rgba(201,79,46,.35)" font-size="7" font-family="monospace">TM-B</text>
+        <text x="18" y="114" fill="rgba(201,79,46,.95)" font-size="7" font-family="monospace" font-weight="bold">TM-C ★</text>
+        <text x="18" y="144" fill="rgba(201,79,46,.35)" font-size="7" font-family="monospace">TM-D</text>
+        <text x="18" y="190" fill="rgba(201,79,46,.35)" font-size="7" font-family="monospace">TM-E</text>
+        <text x="18" y="220" fill="rgba(201,79,46,.35)" font-size="7" font-family="monospace">TM-F</text>
+        <text x="18" y="266" fill="rgba(201,79,46,.35)" font-size="7" font-family="monospace">TM-G</text>
+        <text x="18" y="296" fill="rgba(201,79,46,.35)" font-size="7" font-family="monospace">TM-H</text>
+        <!-- Pressure annotations -->
+        <text x="126" y="109" fill="rgba(201,79,46,.6)" font-size="6" font-family="monospace">P:0.94★</text>
+        <text x="126" y="185" fill="rgba(160,132,80,.5)" font-size="6" font-family="monospace">P:0.71</text>
+        <!-- Chromatic ghost — the circuit whisper -->
+        <rect x="228" y="77" width="60" height="20" fill="none" stroke="rgba(110,168,160,0.07)" stroke-width=".5" transform="translate(2,1.5)"/>
+      </svg>
+      <div class="p-hover-label" style="color:rgba(201,79,46,.5)">8 teams · bracket simulation</div>
+    </div>
+  </div>
+
+  <!-- ── 02: Face Detection ── -->
+  <div class="pcard c-face rv">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag">02 · Computer Vision · Classification · Personal</span>
+        <h3 class="ptitle">Photo Album<br>Face Classifier</h3>
+        <p class="pdesc">Built on top of Google's facial recognition infrastructure, this model classifies 100+ albums of personal photos into distinct individuals. Required meticulous dataset construction — edge-case handling across aging, lighting variation, partial occlusion — and a 3-pass label verification pipeline. The unglamorous work that makes the model actually work.</p>
+      </div>
+      <div>
+        <div class="pmeta">
+          <div class="pmet"><div class="pmet-n">100+</div><div class="pmet-l">Albums classified</div></div>
+          <div class="pmet"><div class="pmet-n">82K</div><div class="pmet-l">Labelled samples</div></div>
+          <div class="pmet"><div class="pmet-n">3-pass</div><div class="pmet-l">Verification</div></div>
+        </div>
+        <div class="ptech" style="color:var(--ink)"><span>Python</span><span>Google Vision API</span><span>OpenCV</span><span>Pandas</span><span>Custom Pipeline</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis" style="min-height:300px;background:var(--fog);">
+      <div class="vis-faces" id="face-grid"></div>
+      <div class="p-hover-label" style="color:rgba(9,9,11,.4)">hover to illuminate</div>
+    </div>
+  </div>
+
+  <!-- ── 03: GWOSC Gravitational Wave Analysis ── -->
+  <div class="pcard c-gwosc rv">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag">03 · Signal Processing · LIGO / GWOSC · Active</span>
+        <h3 class="ptitle">Gravitational<br>Wave Analysis</h3>
+        <p class="pdesc">A live research pipeline: fetching raw L1 detector strain from GWOSC's NDS server at 16,384 Hz, then running a sequence of custom preprocessing — 5σ outlier removal, constant detrending, 4th-order Butterworth bandpass (20–600 Hz), and PSD-interpolation whitening. GPU-accelerated with TensorFlow 2.18. The question underneath: what signal lives in the noise the detector was never meant to show?</p>
+      </div>
+      <div>
+        <div class="pmeta">
+          <div class="pmet"><div class="pmet-n">16,384</div><div class="pmet-l">Hz sample rate</div></div>
+          <div class="pmet"><div class="pmet-n">327K</div><div class="pmet-l">Samples / window</div></div>
+          <div class="pmet"><div class="pmet-n">5σ</div><div class="pmet-l">Outlier threshold</div></div>
+        </div>
+        <div class="ptech"><span>GWpy</span><span>SciPy</span><span>NumPy</span><span>TensorFlow</span><span>LIGO NDS</span><span>Pandas</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis">
+      <svg class="vis-wave" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%">
+        <defs>
+          <linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5E9050" stop-opacity=".12"/>
+            <stop offset="36%" stop-color="#AACF98" stop-opacity=".4"/>
+            <stop offset="48%" stop-color="#AACF98" stop-opacity=".88"/>
+            <stop offset="52%" stop-color="#C94F2E" stop-opacity=".8"/>
+            <stop offset="60%" stop-color="#AACF98" stop-opacity=".38"/>
+            <stop offset="100%" stop-color="#5E9050" stop-opacity=".1"/>
+          </linearGradient>
+          <linearGradient id="wg-ghost" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#6EA8A0" stop-opacity="0"/>
+            <stop offset="48%" stop-color="#6EA8A0" stop-opacity=".15"/>
+            <stop offset="55%" stop-color="#C94F2E" stop-opacity=".12"/>
+            <stop offset="65%" stop-color="#6EA8A0" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- Grid -->
+        <line x1="0" y1="80" x2="320" y2="80" stroke="rgba(170,207,152,.055)" stroke-width=".5"/>
+        <line x1="0" y1="40" x2="320" y2="40" stroke="rgba(170,207,152,.03)" stroke-width=".4" stroke-dasharray="3,6"/>
+        <line x1="0" y1="120" x2="320" y2="120" stroke="rgba(170,207,152,.03)" stroke-width=".4" stroke-dasharray="3,6"/>
+        <!-- Noise baseline -->
+        <polyline points="0,80 10,79 16,81 24,79 34,81 42,79 50,82 58,79 66,81 74,78 82,81 90,79 100,81 108,79 116,82 120,83" stroke="rgba(170,207,152,.18)" stroke-width=".7" fill="none"/>
+        <!-- Signal burst -->
+        <polyline points="120,83 128,74 136,55 142,32 148,10 152,80 156,150 160,8 164,74 170,62 176,76 184,80 194,79 206,81 218,79 230,81 242,80 256,79 268,81 280,80 292,81 308,80 320,81" stroke="url(#wg)" stroke-width="1.3" fill="none"/>
+        <!-- Chromatic ghost trail — the cyberpunk whisper -->
+        <polyline points="120,83 128,74 136,55 142,32 148,10 152,80 156,150 160,8" stroke="url(#wg-ghost)" stroke-width=".6" fill="none" transform="translate(2,1.5)"/>
+        <!-- Event marker -->
+        <line x1="152" y1="0" x2="152" y2="38" stroke="rgba(201,79,46,.45)" stroke-width=".7" stroke-dasharray="2,3"/>
+        <text x="156" y="18" fill="rgba(201,79,46,.65)" font-size="7" font-family="monospace">GW event?</text>
+        <!-- Freq label -->
+        <text x="2" y="152" fill="rgba(170,207,152,.22)" font-size="6" font-family="monospace">t=0s</text>
+        <text x="140" y="152" fill="rgba(170,207,152,.22)" font-size="6" font-family="monospace">t=10s</text>
+        <text x="298" y="152" fill="rgba(170,207,152,.22)" font-size="6" font-family="monospace">t=20s</text>
+        <!-- Bandpass label -->
+        <text x="220" y="36" fill="rgba(170,207,152,.22)" font-size="6" font-family="monospace">20–600Hz</text>
+        <text x="220" y="46" fill="rgba(170,207,152,.18)" font-size="6" font-family="monospace">bandpass ✓</text>
+      </svg>
+      <div class="p-hover-label" style="color:rgba(170,207,152,.45)">L1:LSC-DARM_OUT_DQ · whitened</div>
+    </div>
+  </div>
+
+  <!-- ── 04: Chess Engine ── -->
+  <div class="pcard c-chess rv">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag">04 · Reinforcement Learning · Personal · 2024</span>
+        <h3 class="ptitle">Self-Learning<br>Chess Engine</h3>
+        <p class="pdesc">A chess engine that taught itself through 500+ PPO self-play games, guided by Monte Carlo Tree Search. A transformer-based board evaluator reduces move prediction error by 25%. Particle Swarm Optimisation cut training time by 20%. Automated performance tracking across 10,000+ simulations — studying openings, midgame tactics, endgame precision. Built purely out of curiosity at 2am.</p>
+      </div>
+      <div>
+        <div class="pmeta" style="color:var(--bronze)">
+          <div class="pmet"><div class="pmet-n">10K+</div><div class="pmet-l">Simulations</div></div>
+          <div class="pmet"><div class="pmet-n">30%</div><div class="pmet-l">Decision gain</div></div>
+          <div class="pmet"><div class="pmet-n">25%</div><div class="pmet-l">Error reduction</div></div>
+        </div>
+        <div class="ptech" style="color:var(--bronze)"><span>PyTorch</span><span>PPO</span><span>MCTS</span><span>Transformer</span><span>PSO</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis" style="min-height:300px;">
+      <div class="vis-chess" id="chess-board"></div>
+      <div class="p-hover-label" style="color:rgba(160,132,80,.5)">hover to activate</div>
+    </div>
+  </div>
+
+  <!-- ── 05: MSc Thesis ── -->
+  <div class="pcard c-thesis rv" id="p-thesis">
+    <div class="t-radial" style="width:550px;height:550px;right:-130px;top:-130px;animation-delay:0s"></div>
+    <div class="t-radial" style="width:400px;height:400px;right:-60px;top:-60px;animation-delay:1.4s"></div>
+    <div class="t-radial" style="width:250px;height:250px;right:20px;top:20px;animation-delay:2.8s"></div>
+    <div class="c-thesis-inner" style="position:relative;z-index:2;">
+      <div>
+        <span class="ptag" style="color:rgba(234,228,217,.42)">05 · MSc Thesis · Heriot-Watt University · 2024</span>
+        <h3 class="ptitle" style="font-size:clamp(26px,4vw,52px);color:var(--paper)">Adaptive Analytics<br>for Historical Simulations</h3>
+        <p class="pdesc" style="color:rgba(234,228,217,.62);max-width:580px">Designed automated gameplay agents using the JominiEngine to generate behavioural data at scale. Applied K-means clustering, Random Forest, Swarm Optimisation, and LSTM networks to model and optimise gameplay loops — improving AI-driven player retention metrics by 35%. Built designer-facing dashboards to translate data patterns into actionable game balance decisions.</p>
+        <div class="ptech" style="color:var(--paper);margin-top:18px"><span>JominiEngine</span><span>LSTM</span><span>K-means</span><span>Random Forest</span><span>PSO</span><span>Tableau</span><span>Python</span></div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(54px,8vw,104px);font-weight:300;line-height:1;color:rgba(234,228,217,.18)">35%</div>
+        <div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(234,228,217,.35);text-transform:uppercase;margin-top:4px">AI retention uplift</div>
+        <div style="margin-top:20px;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.14em;color:rgba(234,228,217,.25);text-transform:uppercase">2.1M events logged</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 06: PSO / ANN ── -->
+  <div class="pcard c-pso rv">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag" style="color:rgba(9,9,11,.38)">06 · Biologically Inspired Computation · Heriot-Watt · 2023</span>
+        <h3 class="ptitle" style="color:var(--ink)">Multi-Layer ANN<br>via PSO Variants</h3>
+        <p class="pdesc">Implemented and benchmarked multi-layer ANNs optimised by three PSO variants — exploring how inertia weight, layer depth, and neuron count interact. 30+ experimental runs, seeded and fully reproducible. Reached 97% accuracy while cutting computational cost by 20%. This was the course — Biologically Inspired Computation — that made me realise how much of machine learning is just evolution with better PR.</p>
+      </div>
+      <div>
+        <div class="pmeta" style="color:var(--ink)">
+          <div class="pmet"><div class="pmet-n">97%</div><div class="pmet-l">Peak accuracy</div></div>
+          <div class="pmet"><div class="pmet-n">30+</div><div class="pmet-l">Exp. runs</div></div>
+          <div class="pmet"><div class="pmet-n">3</div><div class="pmet-l">PSO variants</div></div>
+        </div>
+        <div class="ptech" style="color:var(--ink)"><span>Python</span><span>NumPy</span><span>SciPy</span><span>PSO</span><span>ANN</span><span>Scikit-learn</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis" style="min-height:300px;">
+      <canvas id="pso-canvas" class="vis-pso"></canvas>
+      <div class="p-hover-label" style="color:rgba(9,9,11,.38)">live PSO simulation</div>
+    </div>
+  </div>
+
+  <!-- ── 07: Global Information Warehouse (Infosys) ── -->
+  <div class="pcard c-giw rv">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag">07 · Enterprise Engineering · Infosys · 2020–2022</span>
+        <h3 class="ptitle">Global Information<br>Warehouse</h3>
+        <p class="pdesc">Large-scale enterprise data platform serving 500+ users. Optimised RESTful APIs with SpringBoot, reducing data transfer latency by 40%. Executed quarterly releases via Maven and Jenkins at a 98% success rate. Designed real-time Kibana monitoring dashboards that cut system downtime by 30% — the grounding in production-grade data infrastructure that informs how I think about data at scale.</p>
+      </div>
+      <div>
+        <div class="pmeta">
+          <div class="pmet"><div class="pmet-n">40%</div><div class="pmet-l">Latency cut</div></div>
+          <div class="pmet"><div class="pmet-n">98%</div><div class="pmet-l">Release success</div></div>
+          <div class="pmet"><div class="pmet-n">500+</div><div class="pmet-l">Users served</div></div>
+        </div>
+        <div class="ptech"><span>SpringBoot</span><span>Java</span><span>REST</span><span>Kibana</span><span>Jenkins</span><span>Maven</span><span>PostgreSQL</span><span>Kafka</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis" style="min-height:300px;">
+      <div class="vis-giw" id="giw-vis">
+        <!-- rows filled by JS -->
+      </div>
+      <div class="p-hover-label">uptime · 98.2% · 500+ users</div>
+    </div>
+  </div>
+
+  <!-- ── 08 (bonus): Bio-Inspired Computation study ── -->
+  <div class="pcard c-bio rv">
+    <div class="pcard-body">
+      <div>
+        <span class="ptag">08 · Emergent Systems · Coursework · Heriot-Watt · 2023</span>
+        <h3 class="ptitle">Biologically Inspired<br>Computation</h3>
+        <p class="pdesc">The course that changed everything. Evolutionary algorithms, ant colony optimisation, neural development, flocking behaviours — all as data strategies. Boids-style flocking simulations, GA-optimised routing, and multi-objective PSO applied to real engineering problems. Taught me that nature solved most of our optimisation problems millions of years before we named them.</p>
+      </div>
+      <div>
+        <div class="pmeta" style="color:var(--celadon)">
+          <div class="pmet"><div class="pmet-n">GA</div><div class="pmet-l">Genetic algos</div></div>
+          <div class="pmet"><div class="pmet-n">ACO</div><div class="pmet-l">Ant colony opt</div></div>
+          <div class="pmet"><div class="pmet-n">Boids</div><div class="pmet-l">Flocking sim</div></div>
+        </div>
+        <div class="ptech" style="color:var(--celadon)"><span>Python</span><span>NumPy</span><span>Evolutionary Algos</span><span>ACO</span><span>PSO</span></div>
+      </div>
+    </div>
+    <div class="pcard-vis" style="min-height:300px;background:#040D0E;">
+      <canvas id="bio-canvas" class="vis-bio" style="width:100%;height:100%"></canvas>
+      <div class="p-hover-label" style="color:rgba(110,168,160,.45)">live boids flocking</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"><span>§ datasets</span></div>
+
+<!-- ═══════════════════════════ DATASETS -->
+<section id="datasets">
+  <div class="ds-left">
+    <h2 class="sec-title rv">The art of<br>the <em>dataset</em></h2>
+    <div class="ds-body rv d1">
+      <p>
+        I create, clean, and collate datasets in my own time — not as preparation for something else, but as an end in itself. A well-formed dataset is its own kind of precision work.
+      </p>
+      <p>
+        I understand datasets the way a surgeon understands anatomy: their structure, their pathologies, their silences. I can spot a labelling error at scale, engineer features from raw signal, and design evaluation sets that <strong>don't leak</strong>. This is the work that matters most when model quality is on the line.
+      </p>
+      <p>
+        This positions me directly for <strong>eval engineering</strong>, <strong>LLM fine-tuning pipelines</strong>, large-scale <strong>data curation</strong> (SWE-bench-style holdout design), and dataset engineering for robotics and multimodal systems.
+      </p>
+    </div>
+    <div class="ds-tags rv d2">
+      <div class="ds-cap-tag">Holdout Design</div>
+      <div class="ds-cap-tag">Eval Engineering</div>
+      <div class="ds-cap-tag">Label Pipeline</div>
+      <div class="ds-cap-tag">Feature Engineering</div>
+      <div class="ds-cap-tag">LLM Fine-tuning</div>
+      <div class="ds-cap-tag">SWE-bench aware</div>
+      <div class="ds-cap-tag">Schema Design</div>
+      <div class="ds-cap-tag">Null Handling</div>
+      <div class="ds-cap-tag">Stratified Splits</div>
+    </div>
+  </div>
+
+  <div class="rv d2">
+    <div class="ds-explorer">
+      <div class="ds-explorer-header">
+        <span class="ds-dot active"></span>
+        <span class="ds-dot"></span>
+        <span class="ds-dot"></span>
+        <span style="margin-left:8px">~/datasets/personal/</span>
+      </div>
+      <div class="ds-file-list" id="ds-file-list"></div>
+      <div class="ds-meta-panel empty" id="ds-meta-panel">
+        <div class="ds-meta-title">// hover a file to inspect schema</div>
+        <div class="ds-meta-placeholder">Each dataset above was personally sourced, cleaned, and structured.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"><span>§ experience</span></div>
+
+<!-- ═══════════════════════════ EXPERIENCE -->
+<section id="experience">
+  <h2 class="sec-title rv" style="padding-top:80px">Where I've<br><em>worked</em></h2>
+  <div class="exp-layout">
+    <div class="exp-list">
+      <div class="exp-item rv">
+        <div class="exp-date">Nov 2024 — Present</div>
+        <div class="exp-role">Freelance Data Analyst &amp; ML Engineer</div>
+        <div class="exp-co">Self-Employed · Edinburgh, UK</div>
+        <ul class="exp-bullets">
+          <li>10–20% improvement in client decision accuracy via ad hoc EDA on customer &amp; operational data</li>
+          <li>25–40% faster SQL query performance across PostgreSQL and MongoDB</li>
+          <li>End-to-end analytics across 4+ client engagements — ingestion to insight</li>
+          <li>Automated dashboards and KPI reporting pipelines (Matplotlib, Seaborn, Tableau)</li>
+        </ul>
+      </div>
+      <div class="exp-item rv d1">
+        <div class="exp-date">Oct 2020 — Dec 2022</div>
+        <div class="exp-role">Senior Systems Engineer</div>
+        <div class="exp-co">Infosys · Chennai, India</div>
+        <ul class="exp-bullets">
+          <li>40% reduction in API latency through transactional data analysis and RESTful optimisation</li>
+          <li>Real-time Kibana dashboards — 30% cut in system downtime, 25% increase in sprint velocity</li>
+          <li>98% deployment success rate across 500+ users via Maven + Jenkins</li>
+          <li>Kafka &amp; Grafana monitoring pipeline for data-driven operational insights</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="exp-pull rv d1">
+        <div class="exp-pull-label">// on working with data</div>
+        <div class="exp-pull-text">"The most important moment in any data project is before the first model runs — when you decide what to measure, what to keep, and what to throw away."</div>
+        <div class="exp-pull-bg">∞</div>
+      </div>
+      <div class="certs-box rv d2">
+        <div class="certs-label">// certifications</div>
+        <div class="cert-item">Python for Data Science<span>NPTEL · IIT Madras · 2022</span></div>
+        <div class="cert-item">Generative AI with LLMs<span>Coursera · 2025</span></div>
+        <div class="cert-item">Deploy ML Models — FastAPI &amp; Docker<span>Udemy · 2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"><span>§ contact</span></div>
+
+<!-- ═══════════════════════════ CONTACT -->
+<section id="contact">
+  <div class="contact-opener">
+    <div>
+      <h2 class="contact-cta rv">
+        Let's make<br>something<br><em>real.</em>
+      </h2>
+      <div class="contact-cta-note rv d2">
+        I'm actively looking for roles in<br>
+        <strong>data science · ML engineering</strong><br>
+        <strong>dataset &amp; eval engineering</strong><br>
+        Based in Edinburgh. Open to remote.
+      </div>
+    </div>
+
+    <div class="contact-looking rv d2">
+      <ul class="contact-role-list">
+        <li class="contact-role-item contact-role-hot">Dataset / Eval Engineer</li>
+        <li class="contact-role-item contact-role-hot">LLM Data &amp; Fine-tuning</li>
+        <li class="contact-role-item contact-role-hot">Model Evaluation Specialist</li>
+        <li class="contact-role-item">Data Scientist</li>
+        <li class="contact-role-item">ML Engineer</li>
+        <li class="contact-role-item">Data Analyst</li>
+        <li class="contact-role-item">Data Warehouse / Robotics Data</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contact-strip rv">
+    <a href="mailto:giridhar.kannan.77@gmail.com" class="contact-row">
+      <span class="cl">Email</span>
+      <span class="cv">giridhar.kannan.77@gmail.com</span>
+      <span class="contact-row-arrow">→</span>
+    </a>
+    <a href="https://www.linkedin.com/in/giridharkannan" target="_blank" class="contact-row">
+      <span class="cl">LinkedIn</span>
+      <span class="cv">/in/giridharkannan</span>
+      <span class="contact-row-arrow">→</span>
+    </a>
+    <a href="https://github.com/mmhfn1" target="_blank" class="contact-row">
+      <span class="cl">GitHub</span>
+      <span class="cv">mmhfn1</span>
+      <span class="contact-row-arrow">→</span>
+    </a>
+    <div class="contact-row" style="cursor:none">
+      <span class="cl">Phone</span>
+      <span class="cv">+44 7407 305342</span>
+      <span class="contact-row-arrow" style="opacity:0">→</span>
+    </div>
+    <div class="contact-row" style="cursor:none;border-bottom:none">
+      <span class="cl">Location</span>
+      <span class="cv">Edinburgh, UK</span>
+      <span class="contact-row-arrow" style="opacity:0">→</span>
+    </div>
+  </div>
+
+  <div class="footer-rule rv">
+    <span class="footer-copy">Giridhar Kannan © 2025 — mmhfn1.github.io</span>
+    <button id="egg-trigger">// &gt;_</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SCRIPTS -->
+<script>
+/* ═══ INTRO ═══ */
+(()=>{
+  const intro=document.getElementById('intro');
+  setTimeout(()=>{intro.classList.add('fade');setTimeout(()=>intro.classList.add('gone'),950);},2200);
+})();
+
+/* ═══ CURSOR ═══ */
+(()=>{
+  const c=document.getElementById('cur'),r=document.getElementById('cur-r');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function anim(){
+    c.style.left=mx+'px';c.style.top=my+'px';
+    rx+=(mx-rx)*.14;ry+=(my-ry)*.14;
+    r.style.left=rx+'px';r.style.top=ry+'px';
+    requestAnimationFrame(anim);
+  })();
+  document.querySelectorAll('a,button,.pcard,.exp-item,.ds-file,.skill-tag,.contact-row,.hstat').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));
+  });
+})();
+
+/* ═══ RIPPLE CANVAS ═══ */
+(()=>{
+  const cv=document.getElementById('rcanvas'),ctx=cv.getContext('2d');
+  let W,H;
+  const resize=()=>{W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;};
+  resize();window.addEventListener('resize',resize);
+  const rips=[];
+  document.addEventListener('mousemove',e=>{
+    if(Math.random()>.80) rips.push({x:e.clientX,y:e.clientY+scrollY,r:0,max:45+Math.random()*45,a:.1,sp:.45+Math.random()*.6});
+  });
+  document.addEventListener('click',e=>{
+    for(let k=0;k<6;k++) rips.push({x:e.clientX,y:e.clientY+scrollY,r:0,max:60+k*40,a:.16,sp:.4+k*.12});
+  });
+  (function draw(){
+    ctx.clearRect(0,0,W,H);
+    const sy=scrollY;
+    for(let i=rips.length-1;i>=0;i--){
+      const p=rips[i],prog=p.r/p.max;
+      ctx.beginPath();ctx.arc(p.x,p.y-sy,p.r,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(94,144,80,${p.a*(1-prog)})`;ctx.lineWidth=.7;ctx.stroke();
+      p.r+=p.sp;
+      if(p.r>p.max)rips.splice(i,1);
+    }
+    requestAnimationFrame(draw);
+  })();
+})();
+
+/* ═══ SCROLL REVEALS ═══ */
+(()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.07});
+  document.querySelectorAll('.rv,.rv-x').forEach(el=>obs.observe(el));
+})();
+
+/* ═══ COUNTER ANIMATION ═══ */
+(()=>{
+  function count(el,target,dur){
+    let s=null;
+    (function step(ts){
+      if(!s)s=ts;
+      const p=Math.min((ts-s)/dur,1),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*e)+'%';
+      if(p<1)requestAnimationFrame(step);
+    })(performance.now());
+  }
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-target]').forEach(n=>count(n,+n.dataset.target,1700));
+      obs.unobserve(e.target);
+    }
+  }),{threshold:.4});
+  document.querySelectorAll('.hero-stats').forEach(el=>obs.observe(el));
+})();
+
+/* ═══ TERMINAL HERO ═══ */
+(()=>{
+  const box=document.getElementById('terminal');
+  const lines=[
+    {t:'dim',v:'# giridhar_kannan — data scientist / ml engineer'},
+    {t:'dim',v:'# msc data science · heriot-watt university · edinburgh'},
+    {t:'',v:''},
+    {t:'p',v:'import_dataset("gravitational_waves")',r:'327,680 samples @ 16,384 Hz · L1:LSC-DARM_OUT_DQ'},
+    {t:'p',v:'preprocess(σ=5, bandpass=[20,600], whiten=True)',r:'outliers removed → detrended → whitened ✓'},
+    {t:'p',v:'model.fit(X_train, epochs=50, device="GPU")',r:'TF 2.18 · val_loss: 0.0042 · val_acc: 0.974'},
+    {t:'',v:''},
+    {t:'p',v:'pso.optimize(ann, variants=3, runs=30)',r:'97.1% accuracy · −20% compute cost'},
+    {t:'p',v:'chess_engine.self_play(n_games=500)',r:'PPO+MCTS · 10,241 eval sims · Elo +312'},
+    {t:'p',v:'tourney.simulate(teams=8, pressure=True)',r:'pressure_factor engineered · R² 0.89'},
+    {t:'',v:''},
+    {t:'p',v:'dataset.audit(face_classifier)',r:'null: 0.0% · labels: 3-pass verified · 82K rows'},
+    {t:'p',v:'eval.design(method="stratified_holdout")',r:'train/val/test locked · no leakage · swe-bench aware'},
+    {t:'dim',v:'# open: dataset eng · eval eng · llm fine-tuning'},
+    {t:'dim',v:'# model evals · data science · ml engineering'},
+  ];
+  let html='';
+  lines.forEach(l=>{
+    if(!l.v){html+='<span class="t-line"> </span>';return;}
+    if(l.t==='dim'){html+=`<span class="t-line t-dim">${l.v}</span>`;return;}
+    html+=`<span class="t-line"><span class="t-prompt">›</span><span class="t-val"> ${l.v}</span>`;
+    if(l.r)html+=`<br><span class="t-dim" style="padding-left:14px">→ ${l.r}</span>`;
+    html+='</span>';
+  });
+  html+=`<span class="t-line"><span class="t-prompt">›</span> <span class="t-cursor"></span></span>`;
+  box.innerHTML=html;
+})();
+
+/* ═══ SKILLS CONSTELLATION ═══ */
+(()=>{
+  const cont=document.getElementById('constellation');
+  const canvas=document.getElementById('skill-canvas');
+  const skills=[
+    {n:'Python',type:'core'},{n:'NumPy',type:'core'},{n:'Pandas',type:'core'},
+    {n:'TensorFlow',type:'core'},{n:'PyTorch',type:'core'},
+    {n:'Dataset Curation',type:'hot'},{n:'Model Evals',type:'hot'},
+    {n:'Eval Engineering',type:'hot'},{n:'LLM Fine-tuning',type:'hot'},
+    {n:'SQL / PostgreSQL',type:'core'},{n:'Scikit-learn',type:'core'},
+    {n:'SciPy',type:'core'},{n:'Swarm Opt.',type:'core'},
+    {n:'Holdout Design',type:'hot'},{n:'Feature Eng.',type:'hot'},
+    {n:'MongoDB',type:'cool'},{n:'FastAPI',type:'cool'},
+    {n:'Docker',type:'cool'},{n:'AWS',type:'cool'},
+    {n:'Matplotlib',type:''},{n:'Tableau',type:''},{n:'Seaborn',type:''},
+    {n:'GWpy',type:''},{n:'Kafka',type:''},{n:'R',type:''},
+    {n:'Kibana',type:''},{n:'Git',type:''},{n:'Linux',type:''},
+  ];
+  const placed=[];
+  skills.forEach((s,i)=>{
+    const el=document.createElement('div');
+    el.className='skill-tag'+(s.type?' '+s.type:'');
+    el.textContent=s.n;
+    cont.appendChild(el);
+    const col=i%4,row=Math.floor(i/4);
+    const bx=(col/4)*80+4,by=(row/7)*82+4;
+    const jx=bx+(Math.random()-0.5)*14,jy=by+(Math.random()-0.5)*12;
+    el.style.left=Math.min(Math.max(jx,1),84)+'%';
+    el.style.top=Math.min(Math.max(jy,2),90)+'%';
+    const dx=(Math.random()-0.5)*18,dy=(Math.random()-0.5)*14,dur=6+Math.random()*7;
+    const ks=document.createElement('style');
+    ks.textContent=`@keyframes drift${i}{0%,100%{transform:translate(0,0)}50%{transform:translate(${dx}px,${dy}px)}}`;
+    document.head.appendChild(ks);
+    el.style.animation=`drift${i} ${dur}s ease-in-out infinite`;
+    el.style.animationDelay=(Math.random()*-dur)+'s';
+    placed.push(el);
+  });
+
+  // Draw constellation lines between nearby tags
+  function drawLines(){
+    if(!canvas.parentElement)return;
+    canvas.width=cont.offsetWidth;canvas.height=cont.offsetHeight;
+    const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);
+    const positions=placed.map(el=>{
+      const r=el.getBoundingClientRect(),pr=cont.getBoundingClientRect();
+      return{x:r.left-pr.left+r.width/2,y:r.top-pr.top+r.height/2,el};
+    });
+    for(let i=0;i<positions.length;i++){
+      for(let j=i+1;j<positions.length;j++){
+        const dx=positions[i].x-positions[j].x,dy=positions[i].y-positions[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){
+          ctx.beginPath();ctx.moveTo(positions[i].x,positions[i].y);ctx.lineTo(positions[j].x,positions[j].y);
+          ctx.strokeStyle=`rgba(170,207,152,${0.07*(1-dist/120)})`;ctx.lineWidth=.5;ctx.stroke();
+        }
+      }
+    }
+  }
+  setTimeout(drawLines,200);
+  window.addEventListener('resize',()=>setTimeout(drawLines,100));
+})();
+
+/* ═══ FACE GRID ═══ */
+(()=>{
+  const grid=document.getElementById('face-grid');
+  for(let i=0;i<36;i++){
+    const d=document.createElement('div');
+    d.className='fc'+(Math.random()>.5?' lit':'');
+    const del=Math.random()*4,dur=2.5+Math.random()*3;
+    d.style.animation=`fp ${dur}s ${del}s ease infinite`;
+    grid.appendChild(d);
+  }
+  grid.addEventListener('mousemove',e=>{
+    const rect=grid.getBoundingClientRect();
+    const mx=(e.clientX-rect.left)/rect.width,my=(e.clientY-rect.top)/rect.height;
+    grid.querySelectorAll('.fc').forEach((fc,i)=>{
+      const col=i%6,row=Math.floor(i/6);
+      const fx=col/5,fy=row/5;
+      const dist=Math.sqrt((fx-mx)**2+(fy-my)**2);
+      const bright=Math.max(0,1-dist*2.2);
+      fc.style.opacity=0.08+bright*0.68;
+      fc.style.transform=`scale(${0.88+bright*0.2})`;
+    });
+  });
+  grid.addEventListener('mouseleave',()=>{
+    grid.querySelectorAll('.fc').forEach(fc=>{fc.style.opacity='';fc.style.transform='';});
+  });
+})();
+
+/* ═══ CHESS BOARD ═══ */
+(()=>{
+  const board=document.getElementById('chess-board');
+  for(let i=0;i<64;i++){
+    const d=document.createElement('div');
+    const r=Math.floor(i/8),c=i%8;
+    d.className='ch'+((r+c)%2?' dk':'');
+    board.appendChild(d);
+  }
+  // Animate knight moves on hover
+  let moveInterval;
+  board.addEventListener('mouseenter',()=>{
+    moveInterval=setInterval(()=>{
+      const cells=board.querySelectorAll('.ch');
+      const idx=Math.floor(Math.random()*64);
+      const el=cells[idx];
+      el.style.background='rgba(201,79,46,0.5)';
+      el.style.transition='background .1s';
+      setTimeout(()=>{
+        const r=Math.floor(idx/8),c=idx%8;
+        el.style.background=(r+c)%2?'rgba(160,132,80,.1)!important':'rgba(160,132,80,.28)!important';
+        el.style.background='';
+      },400);
+    },350);
+  });
+  board.addEventListener('mouseleave',()=>clearInterval(moveInterval));
+})();
+
+/* ═══ PSO CANVAS ═══ */
+(()=>{
+  const canvas=document.getElementById('pso-canvas');
+  const ctx=canvas.getContext('2d');
+  let W,H;
+  const resize=()=>{W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;};
+  setTimeout(resize,100);window.addEventListener('resize',resize);
+  const N=22;
+  const gbest={x:0.52,y:0.45};
+  const particles=[];
+  for(let i=0;i<N;i++){
+    const cluster=i%3;
+    particles.push({
+      x:Math.random()*400,y:Math.random()*300,
+      vx:(Math.random()-0.5)*2.5,vy:(Math.random()-0.5)*2.5,
+      cluster,best:null,
+    });
+  }
+  function draw(){
+    if(!W||!H){requestAnimationFrame(draw);return;}
+    ctx.fillStyle='rgba(4,13,14,0.22)';ctx.fillRect(0,0,W,H);
+    const gx=gbest.x*W,gy=gbest.y*H;
+    // Global best ring
+    ctx.beginPath();ctx.arc(gx,gy,14,0,Math.PI*2);
+    ctx.strokeStyle='rgba(170,207,152,0.18)';ctx.lineWidth=1;ctx.setLineDash([3,5]);ctx.stroke();ctx.setLineDash([]);
+    ctx.beginPath();ctx.arc(gx,gy,4,0,Math.PI*2);
+    ctx.fillStyle='rgba(201,79,46,0.7)';ctx.fill();
+    ctx.font='7px monospace';ctx.fillStyle='rgba(170,207,152,0.35)';ctx.fillText('g_best · 97%★',gx+8,gy-4);
+    particles.forEach(p=>{
+      const w=0.72,c1=1.4,c2=1.4,r1=Math.random(),r2=Math.random();
+      const pb=p.best||{x:p.x,y:p.y};
+      p.vx=w*p.vx+c1*r1*(pb.x-p.x)+c2*r2*(gx-p.x);
+      p.vy=w*p.vy+c1*r1*(pb.y-p.y)+c2*r2*(gy-p.y);
+      p.vx=Math.max(-2.8,Math.min(2.8,p.vx));p.vy=Math.max(-2.8,Math.min(2.8,p.vy));
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0){p.x=0;p.vx*=-1;}if(p.x>W){p.x=W;p.vx*=-1;}
+      if(p.y<0){p.y=0;p.vy*=-1;}if(p.y>H){p.y=H;p.vy*=-1;}
+      // Trail
+      ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(gx,gy);
+      const lc=['rgba(9,9,11,0.05)','rgba(201,79,46,0.05)','rgba(110,168,160,0.05)'];
+      ctx.strokeStyle=lc[p.cluster];ctx.lineWidth=.4;ctx.stroke();
+      // Particle
+      ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);
+      const fc=['rgba(9,9,11,0.3)','rgba(201,79,46,0.48)','rgba(110,168,160,0.48)'];
+      ctx.fillStyle=fc[p.cluster];ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ═══ BIO / BOIDS CANVAS ═══ */
+(()=>{
+  const canvas=document.getElementById('bio-canvas');
+  const ctx=canvas.getContext('2d');
+  let W,H;
+  const resize=()=>{W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;};
+  setTimeout(resize,100);window.addEventListener('resize',resize);
+  const N=55;
+  const boids=[];
+  for(let i=0;i<N;i++) boids.push({x:Math.random()*400,y:Math.random()*300,vx:(Math.random()-.5)*1.8,vy:(Math.random()-.5)*1.8});
+  function draw(){
+    if(!W||!H){requestAnimationFrame(draw);return;}
+    ctx.fillStyle='rgba(4,13,14,0.2)';ctx.fillRect(0,0,W,H);
+    boids.forEach(b=>{
+      let ax=0,ay=0,sepX=0,sepY=0,algX=0,algY=0,cohX=0,cohY=0,count=0;
+      boids.forEach(o=>{
+        if(o===b)return;
+        const dx=o.x-b.x,dy=o.y-b.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<55){sepX-=dx/dist;sepY-=dy/dist;algX+=o.vx;algY+=o.vy;cohX+=o.x;cohY+=o.y;count++;}
+      });
+      if(count>0){ax+=sepX*.05;ay+=sepY*.05;ax+=(algX/count-b.vx)*.03;ay+=(algY/count-b.vy)*.03;ax+=(cohX/count-b.x)*.004;ay+=(cohY/count-b.y)*.004;}
+      b.vx+=ax;b.vy+=ay;
+      const sp=Math.sqrt(b.vx*b.vx+b.vy*b.vy);
+      if(sp>1.8){b.vx=b.vx/sp*1.8;b.vy=b.vy/sp*1.8;}
+      b.x+=b.vx;b.y+=b.vy;
+      if(b.x<0)b.x=W;if(b.x>W)b.x=0;if(b.y<0)b.y=H;if(b.y>H)b.y=0;
+      const angle=Math.atan2(b.vy,b.vx);
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(angle);
+      ctx.beginPath();ctx.moveTo(5,0);ctx.lineTo(-3,2);ctx.lineTo(-3,-2);ctx.closePath();
+      ctx.fillStyle='rgba(110,168,160,0.38)';ctx.fill();
+      ctx.restore();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ═══ GIW GRID ═══ */
+(()=>{
+  const vis=document.getElementById('giw-vis');
+  for(let r=0;r<8;r++){
+    const row=document.createElement('div');row.className='giw-row';
+    for(let c=0;c<9;c++){
+      const cell=document.createElement('div');
+      cell.className='giw-cell'+(Math.random()>.42?' active':'');
+      row.appendChild(cell);
+    }
+    vis.appendChild(row);
+  }
+  // Animated pulse
+  setInterval(()=>{
+    const cells=vis.querySelectorAll('.giw-cell');
+    const idx=Math.floor(Math.random()*cells.length);
+    cells[idx].classList.toggle('active');
+  },280);
+  const label=document.createElement('div');
+  label.style.cssText='position:absolute;bottom:16px;right:16px;font-family:\'DM Mono\',monospace;font-size:8px;letter-spacing:.12em;color:rgba(170,207,152,.38);text-transform:uppercase';
+  label.textContent='uptime · 98.2%';
+  vis.appendChild(label);
+})();
+
+/* ═══ DATASET EXPLORER ═══ */
+(()=>{
+  const files=[
+    {name:'esports_tourney_v3.csv',size:'4.2 MB',rows:'12,840',cols:'28',null_rate:'0.2%',split:'80/10/10',notes:'Pressure factor hand-engineered from 3yr historical clutch data. Custom-built — this dataset does not exist anywhere else.'},
+    {name:'face_id_embeddings.pkl',size:'2.1 GB',rows:'82,400',cols:'512 + labels',null_rate:'0.0%',split:'stratified by identity',notes:'3-pass label verification pipeline. 25+ distinct identities. Edge-case handling across aging, occlusion, and lighting variation.'},
+    {name:'gwosc_L1_strain.hdf5',size:'187 MB',rows:'327,680',cols:'4 (t, raw, bp, white)',null_rate:'<0.001%',split:'sliding window',notes:'Bandpass 20–600Hz, σ=5 outlier removal, whitened via PSD interpolation. GPU-processed with TF 2.18. Active project.'},
+    {name:'chess_selfplay_log.json',size:'891 MB',rows:'10,241 games',cols:'move + eval + state',null_rate:'0.0%',split:'N/A (RL)',notes:'PPO+MCTS self-play. 500 training games → 10K evaluation sims. Full board state preserved per half-move.'},
+    {name:'gameplay_behavioural.db',size:'3.8 GB',rows:'2.1M events',cols:'41',null_rate:'0.6%',split:'70/15/15',notes:'JominiEngine agent automation. K-means + LSTM downstream. Largest personally-generated dataset to date.'},
+    {name:'ann_pso_trials.csv',size:'22 MB',rows:'1,440',cols:'18',null_rate:'0.0%',split:'30+ experimental runs',notes:'3 PSO variants × hyperparameter grid. Seeded and fully reproducible. Statistical trade-off analysis included.'},
+    {name:'personal_hobby_datasets/',size:'various',rows:'ongoing',cols:'varies',null_rate:'curated',split:'varies',notes:'Ongoing personal curation projects — topics of interest collected, cleaned, and structured for the pure craft of it.'},
+  ];
+  const list=document.getElementById('ds-file-list'),panel=document.getElementById('ds-meta-panel');
+  files.forEach(f=>{
+    const row=document.createElement('div');row.className='ds-file';
+    row.innerHTML=`<svg class="ds-file-icon" viewBox="0 0 14 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1" stroke="currentColor" stroke-width=".8"/><line x1="4" y1="5" x2="10" y2="5" stroke="currentColor" stroke-width=".6"/><line x1="4" y1="8" x2="10" y2="8" stroke="currentColor" stroke-width=".6"/><line x1="4" y1="11" x2="8" y2="11" stroke="currentColor" stroke-width=".6"/></svg><span class="ds-file-name">${f.name}</span><span class="ds-file-size">${f.size}</span>`;
+    row.addEventListener('mouseenter',()=>{
+      document.querySelectorAll('.ds-file').forEach(r=>r.classList.remove('active'));
+      row.classList.add('active');
+      panel.className='ds-meta-panel';
+      panel.innerHTML=`<div class="ds-meta-title">// ${f.name}</div><div class="ds-meta-row"><span class="ds-meta-key">rows</span><span class="ds-meta-val">${f.rows}</span></div><div class="ds-meta-row"><span class="ds-meta-key">columns</span><span class="ds-meta-val">${f.cols}</span></div><div class="ds-meta-row"><span class="ds-meta-key">null_rate</span><span class="ds-meta-val">${f.null_rate}</span></div><div class="ds-meta-row"><span class="ds-meta-key">split</span><span class="ds-meta-val">${f.split}</span></div><div class="ds-meta-notes">${f.notes}</div>`;
+    });
+    list.appendChild(row);
+  });
+})();
+
+/* ═══ EASTER EGG ═══ */
+(()=>{
+  const overlay=document.getElementById('egg-overlay'),trigger=document.getElementById('egg-trigger'),close=document.getElementById('egg-close-btn');
+  let clicks=0,timer;
+  trigger.addEventListener('click',()=>{clicks++;clearTimeout(timer);timer=setTimeout(()=>clicks=0,2000);if(clicks>=3){overlay.classList.add('open');clicks=0;}});
+  close.addEventListener('click',()=>overlay.classList.remove('open'));
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open');});
+})();
+
+/* ═══ PARALLAX HERO ═══ */
+window.addEventListener('scroll',()=>{
+  const name=document.querySelector('.hero-name'),sub=document.querySelector('.hero-sub');
+  if(name)name.style.transform=`translateY(${scrollY*.08}px)`;
+  if(sub)sub.style.transform=`translateY(${scrollY*.04}px)`;
+},{passive:true});
+
+/* ═══ NAV ACTIVE STATE ═══ */
+(()=>{
+  const sections=document.querySelectorAll('section[id]');
+  const links=document.querySelectorAll('.nav-links a');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id);});
+      }
+    });
+  },{rootMargin:'-40% 0px -40% 0px'});
+  sections.forEach(s=>obs.observe(s));
+})();
+
+/* ═══ MAGNETIC CONTACT ROWS ═══ */
+(()=>{
+  document.querySelectorAll('.contact-row').forEach(row=>{
+    row.addEventListener('mousemove',e=>{
+      const rect=row.getBoundingClientRect(),x=(e.clientX-rect.left)/rect.width-.5;
+      row.style.transform=`translateX(${x*5}px)`;
+    });
+    row.addEventListener('mouseleave',()=>{row.style.transform='';});
+  });
+})();
+
+/* ═══ THESIS PARALLAX ═══ */
+(()=>{
+  const thesis=document.getElementById('p-thesis');
+  if(!thesis)return;
+  thesis.addEventListener('mousemove',e=>{
+    const rect=thesis.getBoundingClientRect();
+    const x=(e.clientX-rect.left)/rect.width,y=(e.clientY-rect.top)/rect.height;
+    thesis.querySelectorAll('.t-radial').forEach((el,i)=>{
+      const depth=(i+1)*3;
+      el.style.transform=`translate(${(x-.5)*depth}px,${(y-.5)*depth}px) scale(${1+(i*.02)})`;
+    });
+  });
+  thesis.addEventListener('mouseleave',()=>{thesis.querySelectorAll('.t-radial').forEach(el=>{el.style.transform='';});});
+})();
+</script>
+</body>
+</html>
